@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weili YANG - Photo flower</title>
+    <link rel="stylesheet" href="style flower.css">
+</head>
+<body>
+    <nav class="nav-container">
+        <a href="main.html" class="nav-item">HOME</a>
+        <a href="projects.html" class="nav-item">PROJECTS</a>
+        <a href="cv.html" class="nav-item">CV</a>
+        <a href="contact.html" class="nav-item">CONTACT</a>
+    </nav>
+
+    <div class="main-content">
+        <div class="gallery">
+            <div class="image-container" data-target="project1">
+                <img src="images/1.jpg" class="art-image blur-hover">
+                <div class="image-caption">colorful</div>
+            </div>
+            <div class="image-container" data-target="project2">
+                <img src="images/2.jpg" class="art-image blur-hover">
+                <div class="image-caption">girl</div>
+            </div>
+            <div class="image-container" data-target="project3">
+                <img src="images/3.jpg" class="art-image blur-hover">
+                <div class="image-caption">boy</div>
+            </div>
+            <div class="image-container" data-target="project4">
+                <img src="images/4.jpg" class="art-image blur-hover">
+                <div class="image-caption">fresh</div>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+    
+        <div class="small-gallery">
+            <div class="small-group active" id="project1">
+                <img src="images/s1-1.jpg" alt="Thumb 1">
+                <img src="images/s1-2.jpg" alt="Thumb 2">
+                <img src="images/s1-3.jpg" alt="Thumb 3">
+                <img src="images/s1-4.jpg" alt="Thumb 4">
+                <img src="images/s1-5.jpg" alt="Thumb 5">
+                <img src="images/s1-6.jpg" alt="Thumb 6">
+            </div>
+            
+            <div class="small-group" id="project2">
+                <img src="images/s2-1.jpg" alt="Thumb 1">
+                <img src="images/s2-2.jpg" alt="Thumb 2">
+                <img src="images/s2-3.jpg" alt="Thumb 3">
+                <img src="images/s2-4.jpg" alt="Thumb 4">
+                <img src="images/s2-5.jpg" alt="Thumb 5">
+                <img src="images/s2-6.jpg" alt="Thumb 6">
+            </div>
+
+            <div class="small-group" id="project3">
+                <img src="images/s3-1.jpg" alt="Thumb 1">
+                <img src="images/s3-2.jpg" alt="Thumb 2">
+                <img src="images/s3-3.jpg" alt="Thumb 3">
+                <img src="images/s3-4.jpg" alt="Thumb 4">
+                <img src="images/s3-5.jpg" alt="Thumb 5">
+                <img src="images/s3-6.jpg" alt="Thumb 6">
+            </div>
+
+            <div class="small-group" id="project4">
+                <img src="images/s4-1.jpg" alt="Thumb 1">
+                <img src="images/s4-2.jpg" alt="Thumb 2">
+                <img src="images/s4-3.jpg" alt="Thumb 3">
+                <img src="images/s4-4.jpg" alt="Thumb 4">
+                <img src="images/s4-5.jpg" alt="Thumb 5">
+                <img src="images/s4-6.jpg" alt="Thumb 6">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const containers = document.querySelectorAll('.image-container');
+            const groups = document.querySelectorAll('.small-group');
+
+            containers.forEach(container => {
+                container.addEventListener('mouseover', function() {
+                    const target = this.dataset.target;
+                    groups.forEach(group => {
+                        group.classList.remove('active');
+                        if(group.id === target) {
+                            group.classList.add('active');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
